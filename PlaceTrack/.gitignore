@@ -1,0 +1,10 @@
+.vscode/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+*.log
+Thumbs.db
+Desktop.ini

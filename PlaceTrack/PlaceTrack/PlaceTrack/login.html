@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <div class="auth-side-copy">
+      <h2>Every application, one dashboard.</h2>
+      <p>Log in to see your applications, upcoming interviews and preparation progress in one place.</p>
+      <ul class="auth-side-list">
+        <li>Track applications from Saved to Selected</li>
+        <li>Never miss a test or interview date</li>
+        <li>Follow your prep progress subject by subject</li>
+      </ul>
+    </div>
+    <div class="auth-side-foot">Phase 1 prototype — no real accounts are created.</div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+      <h1>Welcome back</h1>
+      <p class="lede">Log in to continue tracking your placements.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@college.edu" required>
+          <div class="error-text">Enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter your password" required>
+          <div class="error-text">Password must be at least 6 characters.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+      </form>
+
+      <div class="form-divider">or</div>
+      <a href="admin-login.html" class="btn btn-outline btn-block">Log In as Admin</a>
+
+      <p class="form-foot-link">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <div class="auth-side-copy">
+      <h2>Run placement season from one console.</h2>
+      <p>Manage companies, publish opportunities and track every student's progress across the drive.</p>
+      <ul class="auth-side-list">
+        <li>Publish and manage opportunities</li>
+        <li>Monitor applications across all students</li>
+        <li>Keep a live view of placement statistics</li>
+      </ul>
+    </div>
+    <div class="auth-side-foot">Phase 1 prototype — admin access is simulated.</div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+      <h1>Admin Login</h1>
+      <p class="lede">Log in to manage placements for your college.</p>
+
+      <form id="admin-login-form" novalidate>
+        <div class="field">
+          <label for="admin-email">Admin Email</label>
+          <input type="email" id="admin-email" placeholder="admin@college.edu" required>
+          <div class="error-text">Enter a valid admin email address.</div>
+        </div>
+        <div class="field">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" placeholder="Enter your password" required>
+          <div class="error-text">Password must be at least 6 characters.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In as Admin</button>
+      </form>
+
+      <p class="form-foot-link">Not an admin? <a href="login.html">Student Login</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

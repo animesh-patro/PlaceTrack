@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opportunities — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <nav class="side-nav">
+      <div class="side-label">Menu</div>
+      <a href="dashboard.html" class="side-link"><span class="ic">🏠</span> Dashboard</a>
+      <a href="opportunities.html" class="side-link"><span class="ic">🏢</span> Opportunities</a>
+      <a href="applications.html" class="side-link"><span class="ic">📋</span> My Applications</a>
+      <a href="interviews.html" class="side-link"><span class="ic">🎤</span> Tests &amp; Interviews</a>
+      <a href="preparation.html" class="side-link"><span class="ic">📈</span> Preparation</a>
+      <a href="study-hub.html" class="side-link"><span class="ic">📚</span> Study Hub</a><a href="calendar.html" class="side-link"><span class="ic">📅</span> Calendar</a><a href="ai-assistant.html" class="side-link"><span class="ic">🤖</span> AI Assistant</a><a href="profile.html" class="side-link"><span class="ic">👤</span> Profile</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="side-user">
+        <div class="side-avatar">S</div>
+        <div>
+          <div class="side-user-name" data-user-name>Student</div>
+          <div class="side-user-role">3rd Year · CSE</div>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm btn-block" data-logout>Log Out</button>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <div class="topbar">
+      <div class="flex items-center gap-12">
+        <button class="menu-btn" aria-label="Toggle sidebar">☰</button>
+        <h1>Opportunities</h1>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="ic">🔍</span>
+          <input type="text" id="opp-search" placeholder="Search company, role or skill...">
+        </div>
+        <select id="filter-type" class="filter-select">
+          <option value="">All Job Types</option>
+          <option>Internship</option>
+          <option>Full-time</option>
+        </select>
+        <select id="filter-location" class="filter-select">
+          <option value="">All Locations</option>
+          <option>Hyderabad</option>
+          <option>Pune</option>
+          <option>Bengaluru</option>
+          <option>Chennai</option>
+          <option>Remote</option>
+        </select>
+        <select id="filter-branch" class="filter-select">
+          <option value="">All Branches</option>
+          <option>CSE</option>
+          <option>IT</option>
+          <option>ECE</option>
+          <option>EEE</option>
+          <option>MECH</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" id="clear-filters">Clear filters</button>
+      </div>
+
+      <p class="text-muted" id="opp-result-count" style="margin-bottom:16px;font-size:.88rem;"></p>
+
+      <div class="card-grid" id="opportunities-grid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="opp-modal">
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close>×</button>
+    <h3 id="opp-modal-title">Opportunity</h3>
+    <div id="opp-modal-body"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/opportunities.js"></script>
+</body>
+</html>

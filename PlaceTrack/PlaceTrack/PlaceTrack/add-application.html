@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Application — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <nav class="side-nav">
+      <div class="side-label">Menu</div>
+      <a href="dashboard.html" class="side-link"><span class="ic">🏠</span> Dashboard</a>
+      <a href="opportunities.html" class="side-link"><span class="ic">🏢</span> Opportunities</a>
+      <a href="applications.html" class="side-link"><span class="ic">📋</span> My Applications</a>
+      <a href="interviews.html" class="side-link"><span class="ic">🎤</span> Tests &amp; Interviews</a>
+      <a href="preparation.html" class="side-link"><span class="ic">📈</span> Preparation</a>
+      <a href="study-hub.html" class="side-link"><span class="ic">📚</span> Study Hub</a><a href="calendar.html" class="side-link"><span class="ic">📅</span> Calendar</a><a href="ai-assistant.html" class="side-link"><span class="ic">🤖</span> AI Assistant</a><a href="profile.html" class="side-link"><span class="ic">👤</span> Profile</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="side-user">
+        <div class="side-avatar">S</div>
+        <div>
+          <div class="side-user-name" data-user-name>Student</div>
+          <div class="side-user-role">3rd Year · CSE</div>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm btn-block" data-logout>Log Out</button>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <div class="topbar">
+      <div class="flex items-center gap-12">
+        <button class="menu-btn" aria-label="Toggle sidebar">☰</button>
+        <h1 id="form-title">Add Application</h1>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="panel" style="max-width:720px;">
+        <div class="panel-body">
+          <form id="add-application-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="aa-company">Company Name</label>
+                <input type="text" id="aa-company" placeholder="e.g. Microsoft" required>
+                <div class="error-text">Company name is required.</div>
+              </div>
+              <div class="field">
+                <label for="aa-role">Job Role</label>
+                <input type="text" id="aa-role" placeholder="e.g. Software Intern" required>
+                <div class="error-text">Job role is required.</div>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="aa-type">Job Type</label>
+                <select id="aa-type">
+                  <option>Internship</option>
+                  <option>Full-time</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="aa-location">Location</label>
+                <input type="text" id="aa-location" placeholder="e.g. Hyderabad">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="aa-applied-date">Application Date</label>
+                <input type="date" id="aa-applied-date" required>
+                <div class="error-text">Application date is required.</div>
+              </div>
+              <div class="field">
+                <label for="aa-deadline">Deadline</label>
+                <input type="date" id="aa-deadline">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="aa-url">Job URL</label>
+              <input type="url" id="aa-url" placeholder="https://careers.company.com/job/123">
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="aa-status">Status</label>
+                <select id="aa-status"></select>
+              </div>
+              <div class="field">
+                <label for="aa-stipend">Salary / Stipend</label>
+                <input type="text" id="aa-stipend" placeholder="e.g. ₹80,000/month">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="aa-notes">Notes</label>
+              <textarea id="aa-notes" placeholder="Any notes about this application..."></textarea>
+            </div>
+
+            <div class="flex gap-12">
+              <button type="submit" class="btn btn-primary">Save Application</button>
+              <a href="applications.html" class="btn btn-outline">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/applications.js"></script>
+</body>
+</html>

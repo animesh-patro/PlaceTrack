@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Applications — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <nav class="side-nav">
+      <div class="side-label">Menu</div>
+      <a href="dashboard.html" class="side-link"><span class="ic">🏠</span> Dashboard</a>
+      <a href="opportunities.html" class="side-link"><span class="ic">🏢</span> Opportunities</a>
+      <a href="applications.html" class="side-link"><span class="ic">📋</span> My Applications</a>
+      <a href="interviews.html" class="side-link"><span class="ic">🎤</span> Tests &amp; Interviews</a>
+      <a href="preparation.html" class="side-link"><span class="ic">📈</span> Preparation</a>
+      <a href="study-hub.html" class="side-link"><span class="ic">📚</span> Study Hub</a><a href="calendar.html" class="side-link"><span class="ic">📅</span> Calendar</a><a href="ai-assistant.html" class="side-link"><span class="ic">🤖</span> AI Assistant</a><a href="profile.html" class="side-link"><span class="ic">👤</span> Profile</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="side-user">
+        <div class="side-avatar">S</div>
+        <div>
+          <div class="side-user-name" data-user-name>Student</div>
+          <div class="side-user-role">3rd Year · CSE</div>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm btn-block" data-logout>Log Out</button>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <div class="topbar">
+      <div class="flex items-center gap-12">
+        <button class="menu-btn" aria-label="Toggle sidebar">☰</button>
+        <h1>My Applications</h1>
+      </div>
+      <div class="topbar-actions">
+        <a href="add-application.html" class="btn btn-accent btn-sm">+ Add Application</a>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="toolbar">
+        <div class="search-box">
+          <span class="ic">🔍</span>
+          <input type="text" id="app-search" placeholder="Search company or role...">
+        </div>
+        <select id="app-status-filter" class="filter-select">
+          <option value="">All Statuses</option>
+          <option>Saved</option>
+          <option>Applied</option>
+          <option>Assessment</option>
+          <option>Technical Interview</option>
+          <option>HR Interview</option>
+          <option>Selected</option>
+          <option>Rejected</option>
+        </select>
+      </div>
+
+      <div class="panel">
+        <div class="table-wrap" id="applications-table-wrap">
+          <table>
+            <thead>
+              <tr><th>Company</th><th>Role</th><th>Type</th><th>Applied Date</th><th>Status</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="applications-tbody"></tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="applications-empty" style="display:none;">
+          <div class="ic">📋</div>
+          <p>No applications match your filters yet.</p>
+          <a href="add-application.html" class="btn btn-accent btn-sm">Add your first application</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="app-modal">
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close>×</button>
+    <h3 id="app-modal-title">Application</h3>
+    <div id="app-modal-body"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/applications.js"></script>
+</body>
+</html>

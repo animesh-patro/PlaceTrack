@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <nav class="side-nav">
+      <div class="side-label">Admin Menu</div>
+      <a href="admin-dashboard.html" class="side-link active"><span class="ic">🏠</span> Dashboard</a>
+      <a href="#companies" class="side-link"><span class="ic">🏢</span> Companies</a>
+      <a href="#opportunities" class="side-link"><span class="ic">📢</span> Opportunities</a>
+      <a href="#students" class="side-link"><span class="ic">🎓</span> Students</a>
+      <a href="#applications" class="side-link"><span class="ic">📋</span> Applications</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="side-user">
+        <div class="side-avatar">A</div>
+        <div>
+          <div class="side-user-name">Placement Admin</div>
+          <div class="side-user-role">Training &amp; Placement Cell</div>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm btn-block" data-logout>Log Out</button>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <div class="topbar">
+      <div class="flex items-center gap-12">
+        <button class="menu-btn" aria-label="Toggle sidebar">☰</button>
+        <h1>Admin Dashboard</h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-accent btn-sm" data-modal-open="add-opp-modal">+ Add Opportunity</button>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="stat-grid" id="admin-stats" style="grid-template-columns:repeat(4,1fr);"></div>
+
+      <div class="panel" id="opportunities">
+        <div class="panel-head">
+          <h2>Active Opportunities</h2>
+        </div>
+        <div class="toolbar" style="padding:16px 20px 0;margin-bottom:0;">
+          <div class="search-box"><span class="ic">🔍</span><input type="text" id="admin-opp-search" placeholder="Search company or role..."></div>
+          <select id="admin-opp-type" class="filter-select"><option value="">All Job Types</option><option>Internship</option><option>Full-time</option></select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Company</th><th>Role</th><th>Type</th><th>Location</th><th>Deadline</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="admin-opp-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="applications" style="margin-top:20px;">
+        <div class="panel-head"><h2>Application Overview</h2><button class="btn btn-outline btn-sm" id="export-applications">Export Excel</button></div>
+        <div class="panel-body" id="admin-application-overview"></div>
+      </div>
+
+      <div class="panel" id="students" style="margin-top:20px;">
+        <div class="panel-head"><h2>Students</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Branch</th><th>CGPA</th><th>Applications</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><b>Rohit Sharma</b></td><td>CSE</td><td>8.4</td><td>6</td><td><span class="badge badge-selected">Placed</span></td></tr>
+              <tr><td><b>Ananya Verma</b></td><td>IT</td><td>7.9</td><td>4</td><td><span class="badge badge-technical">In Process</span></td></tr>
+              <tr><td><b>Kunal Mehta</b></td><td>ECE</td><td>7.2</td><td>3</td><td><span class="badge badge-applied">Applied</span></td></tr>
+              <tr><td><b>Sneha Rao</b></td><td>CSE</td><td>8.9</td><td>7</td><td><span class="badge badge-selected">Placed</span></td></tr>
+              <tr><td><b>Aditya Nair</b></td><td>MECH</td><td>6.8</td><td>2</td><td><span class="badge badge-rejected">Rejected</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="companies" style="margin-top:20px;">
+        <div class="panel-head"><h2>Companies</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Company</th><th>Drives Conducted</th><th>Students Hired</th><th>Avg. CTC</th></tr></thead>
+            <tbody>
+              <tr><td><b>Microsoft</b></td><td>2</td><td>5</td><td>₹18 LPA equiv.</td></tr>
+              <tr><td><b>TCS</b></td><td>3</td><td>42</td><td>₹7.5 LPA</td></tr>
+              <tr><td><b>Infosys</b></td><td>2</td><td>31</td><td>₹6.5 LPA</td></tr>
+              <tr><td><b>Amazon</b></td><td>1</td><td>3</td><td>₹22 LPA equiv.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="add-opp-modal">
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close>×</button>
+    <h3>Add Opportunity</h3>
+    <form id="add-opportunity-form" novalidate>
+      <div class="field-row">
+        <div class="field"><label for="ao-company">Company</label><input type="text" id="ao-company" placeholder="e.g. Google" required></div>
+        <div class="field"><label for="ao-role">Role</label><input type="text" id="ao-role" placeholder="e.g. SDE-1" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="ao-type">Job Type</label>
+          <select id="ao-type"><option>Internship</option><option>Full-time</option></select>
+        </div>
+        <div class="field"><label for="ao-location">Location</label><input type="text" id="ao-location" placeholder="e.g. Bengaluru"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="ao-ctc">CTC / Stipend</label><input type="text" id="ao-ctc" placeholder="e.g. ₹12 LPA"></div>
+        <div class="field"><label for="ao-cgpa">Minimum CGPA</label><input type="number" id="ao-cgpa" step="0.1" min="0" max="10" placeholder="e.g. 7.0"></div>
+      </div>
+      <div class="field"><label for="ao-branches">Eligible Branches</label><input type="text" id="ao-branches" placeholder="e.g. CSE, IT, ECE"></div>
+      <div class="field"><label for="ao-skills">Required Skills</label><input type="text" id="ao-skills" placeholder="e.g. DSA, System Design"></div>
+      <div class="field-row">
+        <div class="field"><label for="ao-deadline">Application Deadline</label><input type="date" id="ao-deadline"></div>
+        <div class="field"><label for="ao-drive">Drive Date</label><input type="date" id="ao-drive"></div>
+      </div>
+      <div class="field"><label for="ao-desc">Description</label><textarea id="ao-desc" placeholder="Brief description of the role..."></textarea></div>
+      <div class="field"><label for="ao-url">Application URL</label><input type="url" id="ao-url" placeholder="https://careers.company.com/apply"></div>
+      <button type="submit" class="btn btn-primary btn-block">Publish Opportunity</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

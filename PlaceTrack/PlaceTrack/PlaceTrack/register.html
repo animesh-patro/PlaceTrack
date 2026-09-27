@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration — PlaceTrack</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+    <div class="auth-side-copy">
+      <h2>Set up your placement profile in minutes.</h2>
+      <p>Add your academic details once, and PlaceTrack matches you to the right opportunities automatically.</p>
+      <ul class="auth-side-list">
+        <li>Personalized eligibility by CGPA and branch</li>
+        <li>One profile across every application</li>
+        <li>Free for all students</li>
+      </ul>
+    </div>
+    <div class="auth-side-foot">Phase 1 prototype — no data leaves your browser.</div>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="index.html" class="brand"><span class="brand-mark">PT</span> PlaceTrack</a>
+      <h1>Create your account</h1>
+      <p class="lede">Join PlaceTrack to start tracking your placement journey.</p>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="reg-fullname">Full Name</label>
+          <input type="text" id="reg-fullname" placeholder="Your full name" required>
+          <div class="error-text">Enter your full name.</div>
+        </div>
+        <div class="field">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" placeholder="you@college.edu" required>
+          <div class="error-text">Enter a valid email address.</div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="At least 6 characters" required>
+            <div class="error-text">Password must be at least 6 characters.</div>
+          </div>
+          <div class="field">
+            <label for="reg-confirm">Confirm Password</label>
+            <input type="password" id="reg-confirm" placeholder="Re-enter password" required>
+            <div class="error-text">Passwords do not match.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="reg-college">College</label>
+          <input type="text" id="reg-college" placeholder="Your college name" required>
+          <div class="error-text">Enter your college name.</div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="reg-branch">Branch</label>
+            <select id="reg-branch" required>
+              <option value="">Select branch</option>
+              <option>CSE</option>
+              <option>IT</option>
+              <option>ECE</option>
+              <option>EEE</option>
+              <option>MECH</option>
+              <option>CIVIL</option>
+            </select>
+            <div class="error-text">Select your branch.</div>
+          </div>
+          <div class="field">
+            <label for="reg-cgpa">CGPA</label>
+            <input type="number" id="reg-cgpa" step="0.01" min="0" max="10" placeholder="e.g. 8.2" required>
+            <div class="error-text">Enter a CGPA between 0 and 10.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="reg-gradyear">Graduation Year</label>
+          <input type="number" id="reg-gradyear" min="2024" max="2030" placeholder="e.g. 2027" required>
+          <div class="error-text">Enter a valid graduation year.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+      </form>
+
+      <p class="form-foot-link">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
